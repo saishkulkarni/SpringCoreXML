@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<bean id="mobile" class="demo.Mobile" lazy-init="false"
+		scope="singleton">
+		<property name="brand" value="OnePlus"></property>
+		<property name="ram" value="8"></property>
+		<property name="price" value="39000"></property>
+		<property name="sim" ref="jio"></property>
+	</bean>
+
+	<bean id="airtel" class="demo.Airtel"></bean>
+
+	<bean id="jio" class="demo.Jio"></bean>
+	
+	<bean id="laptop" class="demo.Laptop">
+		<constructor-arg index="0" value="Hp"></constructor-arg>
+		<constructor-arg index="1" value="8"></constructor-arg>
+		<constructor-arg index="2" value="85400"></constructor-arg>
+	</bean>
+</beans>
